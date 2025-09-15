@@ -1,29 +1,39 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h1>Metodo lineal para numeros Aleatorios</h1>
+<link rel="stylesheet" href="./lineal.css">
+<div id="lineal-content">
+  <h1>Método Lineal</h1>
 
-    <script src="./lineal.js"></script>
-        <h2>Semilla</h2>
-        <input type="text" id="semilla">
-        <h2>Constate k</h2>
-        <input type="text" id="k">
-        
-        <h2>Numero de numeros a generar m</h2>
-        <input type="text" id="p">
-        <button id="generar" onclick="generarAleatorios()">Generar Aleatorio</button>
+  <div class="form-grid">
+    <div class="form-group">
+      <label for="semilla">Semilla</label>
+      <input type="text" id="semilla">
+    </div>
 
-<br><br><br>
-        <textarea name="aleatorios" id="aleatorios" style="width: 50%;height: 20vh;">
+    <div class="form-group">
+      <label for="k">Constante k</label>
+      <input type="text" id="k">
+    </div>
 
-        </textarea>
-    
-      
+    <div class="form-group">
+      <label for="c">Constante c (primo)</label>
+      <input type="text" id="c">
+    </div>
 
-</body>
-</html>
+    <div class="form-group">
+      <label for="p">Número de números a generar P</label>
+      <input type="text" id="p">
+    </div>
+
+    <div class="form-group button-group">
+      <button onclick="validar()">Generar Aleatorio</button>
+    </div>
+  </div>
+
+  <table id="tablaResultados">
+    <thead>
+      <tr><th>Iteración</th><th>xi</th><th>ri</th></tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+
+  <script src="./lineal.js"></script>
+</div>

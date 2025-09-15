@@ -1,0 +1,37 @@
+<link rel="stylesheet" href="queson.css">
+<div id="que_son">
+    <h1>Números Aleatorios y Pseudoaleatorios</h1>
+
+    <h2>Definición en Simulación</h2>
+    <p>En simulación, las observaciones de una muestra <em>r<sub>1</sub>, r<sub>2</sub>, ..., r<sub>n</sub></em> de una distribución uniforme (0,1) son conocidas como <strong>números aleatorios</strong>.</p>
+    <p>En realidad, en simulación se utilizan <strong>números pseudoaleatorios</strong>; es decir, aquellos que tienen un comportamiento similar al de los números aleatorios. Esto, en un sentido estadístico, equivale a que se pueda pensar que son seleccionados aleatoriamente a partir de una distribución uniforme (0,1).</p>
+
+    <h2>Propiedades Exigibles para una Fuente o Generador de Números Aleatorios</h2>
+    <ol>
+      <li>Los números aleatorios deben venir de una población que sigue una distribución uniforme en el intervalo (0,1).</li>
+      <li>La secuencia debe ser <strong>ALEATORIA</strong> (Independencia Estadística) del nuevo valor respecto de los anteriores.</li>
+    </ol>
+
+    <h2>Propiedades Deseables</h2>
+    <ol>
+      <li>La generación/acceso debe ser rápida.</li>
+      <li>La secuencia debe tener un periodo largo (periodo: número de valores antes de que la serie vuelva a repetirse).</li>
+      <li>Es importante que las secuencias generadas puedan ser reproducibles.</li>
+      <li>El generador debe ser de naturaleza <strong>NO degenerativa</strong>. Una secuencia se dice degenerada cuando se vuelve a repetir el mismo número pero no la secuencia completa.</li>
+    </ol>
+
+    <h2>Métodos para Generar Números Aleatorios</h2>
+    <ol>
+      <li><strong>Manuales:</strong> Los números se generan por medio de tablas.</li>
+      <li><strong>Mecánicos:</strong> Los números se generan por medio de ruletas, loterías o tómbolas.</li>
+      <li><strong>Físicos:</strong> Se utilizan fenómenos aleatorios físicos (dispositivos electrónicos, emisión de rayos alfa de materiales radiactivos).</li>
+      <li><strong>Computacionales:</strong> Con el impulso y la disponibilidad de computadores, se han desarrollado métodos digitales para generar números aleatorios. La mayoría de algoritmos usados por computadores modernos no cumplen algunas reglas de independencia implícitas, pero sí propiedades estadísticas de aleatoriedad "fuertes", lo cual permite su utilización generalizada.</li>
+    </ol>
+
+    <h2>Métodos Digitales Más Usados</h2>
+    <p>Los métodos digitales más usados para la generación de números aleatorios son:</p>
+    <ul>
+      <li>No congruenciales</li>
+      <li>Congruenciales</li>
+    </ul>
+  </div>

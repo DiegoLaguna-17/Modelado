@@ -1,0 +1,46 @@
+<link rel="stylesheet" href="multi.css">
+<div id="multi-content">
+    <h1>Metodo Multiplicativo para numeros Aleatorios</h1>
+
+    <div class="form-grid">
+        <div class="form-group">
+            <label for="semilla">Semilla</label>
+            <input type="text" id="semilla">
+        </div>
+
+        <div class="form-group">
+            <label for="k">Constante k</label>
+            <input type="text" id="k">
+        </div>
+
+        <div class="form-group">
+            <label>Opción</label>
+            <div class="radio-group">
+                <label><input type="radio" name="opcion" value="a">3+8k</label>
+                <label><input type="radio" name="opcion" value="b">5+8k</label>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="p">Número de números a generar P</label>
+            <input type="text" id="p">
+        </div>
+
+        <div class="form-group button-group">
+            <button id="generar" onclick="validar()">Generar Aleatorio</button>
+        </div>
+    </div>
+
+    <table id="tablaResultados">
+        <thead>
+            <tr>
+                <th>Iteración</th>
+                <th>xi</th>
+                <th>ri</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Aquí se llenarán las filas dinámicamente -->
+        </tbody>
+    </table>
+</div>

@@ -1,0 +1,53 @@
+<link rel="stylesheet" href="metodos.css">
+  <div id="metodos">
+    <h1>Métodos Congruenciales</h1>
+
+    <h2>1) Algoritmo Lineal</h2>
+    <p>Este algoritmo congruencial fue propuesto por D. H. Lehmer en 1951. Según Law y Kelton, ha sido el más usado. El algoritmo congruencial lineal genera una secuencia de números enteros mediante la siguiente ecuación recursiva:</p>
+    
+    <div class="highlight">
+      <!-- Aquí se puede colocar la imagen de la ecuación -->
+      <center><img src="/Aleatorios/Contenido/assets/1.png" alt="ecuacion recursiva (Método Lineal)"></center>
+    </div>
+
+    <p>Donde <strong>X0</strong> es la semilla, <strong>a</strong> es la constante multiplicativa, <strong>c</strong> es la constante aditiva y <strong>m</strong> es el módulo; todos los valores (>0) deben ser enteros. Para obtener números pseudoaleatorios en el intervalo (0,1) se requiere la siguiente ecuación:</p>
+    
+    <div class="highlight">
+      <center><img src="/Aleatorios/Contenido/assets/2.png" alt="ecuacion recursiva de números pseduoaleatorios (Método Lineal)"></center>
+    </div>
+
+    <p>Ejemplo:</p>
+    <p>Generar 4 números entre 0 y 1 con los siguientes parámetros: </p>
+    <div class="highlight">
+      <center><img src="/Aleatorios/Contenido/assets/ejemplo.png" alt="Parametros Ejemplos (Método Lineal)">
+    </div>
+
+    <p>En el ejemplo anterior se colocaron arbitrariamente los parámetros <strong>X0, a, c, m</strong>. Para que el algoritmo logre el máximo periodo de vida <em>n</em>, los parámetros deben cumplir ciertas condiciones sugeridas por Banks, Carson, Melson y Nicol:</p>
+    
+    <div class="highlight">
+      <center><img src="/Aleatorios/Contenido/assets/3.png" alt="Condiciones (Método Lineal)"></center>
+    </div>
+
+    <p>Bajo estas condiciones se obtiene un periodo de vida máximo: <strong>N = m = 2<sup>g</sup></strong></p>
+
+    <h2>2) Algoritmo Congruencial Multiplicativo</h2>
+    <p>Este algoritmo surge del lineal cuando <strong>c = 0</strong>. Entonces, la ecuación recursiva es:</p>
+    
+    <div class="highlight">
+      <center><img src="/Aleatorios/Contenido/assets/4.png" alt="Ecuacion recursiva(Método Multiplicativo)" width="80%"></center>
+    </div>
+
+    <p>En comparación con el algoritmo lineal, la ventaja del multiplicativo es que implica una operación menos. Los parámetros de arranque son <strong>X0, a y m</strong>, todos enteros y mayores que cero. Para obtener números pseudoaleatorios en (0,1), se utiliza:</p>
+    
+    <div class="highlight">
+      <center><img src="/Aleatorios/Contenido/assets/5.png" alt="Ecuacion recursiva de números pseduoaleatorios (Método Multiplicativo)" width="80%"></center>
+    </div>
+
+    <p>De acuerdo con Banks, Carson, Nelson y Nicol, las condiciones que deben cumplir los parámetros para alcanzar su máximo periodo son:</p>
+    
+    <div class="highlight">
+      <center><img src="/Aleatorios/Contenido/assets/6.png" alt="Condiciones (Método Multiplicativo)" width="80%" ></center>
+    </div>
+
+    <p>A partir de estas condiciones se logra un periodo de vida máximo: <strong>N = k/4 = 2<sup>g-2</sup></strong>. Conociendo el periodo deseado, se encuentra el valor de <em>g</em> y se reemplaza en <strong>m</strong>.</p>
+  </div>

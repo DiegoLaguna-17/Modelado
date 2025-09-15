@@ -1,31 +1,123 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no">
-    <title>Misión Nutrición</title>
-     <link rel="stylesheet" href="/styles.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no">
+<title>Modelado, Dinámica de Sistemas y Simulación</title>
+<link rel="stylesheet" href="/styles.css">
+<style>
+  /* Transiciones suaves para el contenido */
+  #contenido {
+      transition: opacity 0.4s ease, transform 0.4s ease;
+      opacity: 1;
+      transform: translateY(0);
+  }
+</style>
 </head>
 <body>
+<div>
+<header>
+  <h1>Modelado, Dinámica de Sistemas y Simulación</h1>
+</header>
 
-    <header>
-        <h1>Modelado, Dinamica de Sistemas y Simulación </h1>
-    </header>
+<nav>
+  <ul class="menu">
+    <li>Números Pseudoaleatorios
+      <ul class="submenu">
+        <li><a href="./Aleatorios/Contenido/queson/queson.html" data-css="./Aleatorios/Contenido/queson/queson.css" class="load-content">¿Qué son?</a></li>
+        <li><a href="./Aleatorios/Contenido/metodos/metodos.html" data-css="./Aleatorios/Contenido/metodos/metodos.css" class="load-content">Métodos Congruenciales</a></li>
+      </ul>
+    </li>
+    <li>Generadores
+      <ul class="submenu">
+        <li><a href="./Aleatorios/Lineal/lineal.html" data-css="./Aleatorios/Lineal/lineal.css" data-js="./Aleatorios/Lineal/lineal.js" class="load-content">Lineal</a></li>
+        <li><a href="./Aleatorios/Multiplicativo/multi.html" data-css="./Aleatorios/Multiplicativo/multi.css" data-js="./Aleatorios/Multiplicativo/multi.js" class="load-content">Multiplicativo</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+</div>
+<!-- Contenedor donde se cargará el contenido -->
+<div id="contenido">
+  <p>Cargando...</p>
+</div>
+<script>
+const links = document.querySelectorAll('.load-content');
+const contenido = document.getElementById('contenido');
+let currentCSS;
+let currentJS;
 
-    <nav>
-        <ul class="menu">
-            <li>Números Aleatorios
-                <ul class="submenu">
-                    <a href="./Aleatorios/Lineal/lineal.html">Lineal</a>
-                </ul>
-            </li>
-        </ul>
-    </nav>
+function loadContent(href, cssHref, jsHref){
+    // Fade-out y desplazamiento
+    contenido.style.opacity = 0;
+    contenido.style.transform = "translateY(20px)";
 
+    // Cargar CSS
+    const loadCSS = new Promise((resolve, reject) => {
+        if(currentCSS) currentCSS.remove();
+        const linkElem = document.createElement('link');
+        linkElem.rel = "stylesheet";
+        linkElem.href = cssHref;
+        linkElem.onload = () => resolve();
+        linkElem.onerror = () => reject("Error al cargar CSS: " + cssHref);
+        document.head.appendChild(linkElem);
+        currentCSS = linkElem;
+    });
 
-    
-    <!-- BOTÓN FLOTANTE CON MENÚ -->
+    loadCSS.then(() => {
+        setTimeout(() => {
+            fetch(href)
+            .then(res => res.text())
+            .then(html => {
+                contenido.innerHTML = html;
+                window.scrollTo(0,0);
 
-    <iframe src="/items/items.html" name="contenido" id="iframeContenido"></iframe>
+                // Remover JS anterior si existe
+                if(currentJS){
+                    currentJS.remove();
+                }
+
+                // Cargar JS si existe
+                if(jsHref){
+                    const scriptElem = document.createElement('script');
+                    scriptElem.src = jsHref;
+                    scriptElem.onload = () => {
+                        contenido.style.opacity = 1;
+                        contenido.style.transform = "translateY(0px)";
+                    };
+                    document.body.appendChild(scriptElem);
+                    currentJS = scriptElem;
+                } else {
+                    contenido.style.opacity = 1;
+                    contenido.style.transform = "translateY(0px)";
+                    currentJS = null;
+                }
+
+            }).catch(err => {
+                contenido.innerHTML = "<p>Error al cargar el contenido.</p>";
+                console.error(err);
+            });
+        }, 300);
+    }).catch(err => {
+        contenido.innerHTML = "<p>Error al cargar el CSS.</p>";
+        console.error(err);
+    });
+}
+
+// Evento para todos los links
+links.forEach(link => {
+    link.addEventListener('click', function(e){
+        e.preventDefault();
+        loadContent(this.href, this.dataset.css, this.dataset.js);
+    });
+});
+
+// Cargar Lineal por defecto con su JS
+const defaultLink = document.querySelector('a[href="./Aleatorios/Lineal/lineal.html"]');
+if(defaultLink){
+    loadContent(defaultLink.href, defaultLink.dataset.css, defaultLink.dataset.js);
+}
+</script>
+
 </body>
 </html>

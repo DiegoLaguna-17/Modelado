@@ -1,0 +1,135 @@
+
+  body {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #a1c4fd, #c2e9fb);
+    margin: 0;
+    padding: 20px;
+    color: #333;
+  }
+
+  h1 {
+    text-align: center;
+    color: #2c3e50;
+    margin-bottom: 30px;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+  }
+
+  h2 {
+    margin: 15px 0 5px;
+    color: #34495e;
+  }
+
+  input[type="text"] {
+    width: 250px;
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid #bbb;
+    outline: none;
+    transition: all 0.3s ease;
+    margin-bottom: 15px;
+    font-size: 14px;
+  }
+
+  input[type="text"]:focus {
+    border-color: #2980b9;
+    box-shadow: 0 0 5px rgba(41, 128, 185, 0.5);
+  }
+
+  button {
+    background: #2980b9;
+    color: white;
+    padding: 10px 18px;
+    font-size: 15px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 15px;
+    transition: all 0.3s ease;
+  }
+
+  button:hover {
+    background: #1f6391;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+  }
+
+  table {
+    border-collapse: collapse;
+    width: 80%;
+    margin: 40px auto;
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
+  }
+
+  th, td {
+    padding: 12px 15px;
+    text-align: center;
+  }
+
+  th {
+    background: #2980b9;
+    color: white;
+    text-transform: uppercase;
+    font-size: 14px;
+    letter-spacing: 1px;
+  }
+
+  tr:nth-child(even) {
+    background: #f2f6fc;
+  }
+
+  tr:hover {
+    background: #eaf2fb;
+    transition: 0.2s;
+  }
+#tablaResultados tbody tr:last-child {
+    background-color: #f8d7da; /* rojo claro */
+}
+.form-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center; /* centra los grupos */
+  margin-bottom: 30px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  min-width: 180px;
+}
+
+.button-group {
+  align-self: flex-end; /* pone el botón alineado abajo */
+}
+
+input[type="text"] {
+  padding: 8px;
+  border-radius: 6px;
+  border: 1px solid #bbb;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+input[type="text"]:focus {
+  border-color: #2980b9;
+  box-shadow: 0 0 5px rgba(41, 128, 185, 0.5);
+}
+
+button {
+  background: #2980b9;
+  color: white;
+  padding: 10px 18px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  background: #1f6391;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+}
