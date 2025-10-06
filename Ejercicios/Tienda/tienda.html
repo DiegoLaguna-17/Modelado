@@ -1,0 +1,33 @@
+<link rel="stylesheet" href="./tienda.css">
+
+    <h1>Simulación de Llegada de Clientes a una Tienda</h1>
+
+    <div class="container">
+        <label for="nmh">Número de días de simulación:</label><br>
+        <input type="number" id="nmh" min="1" value="10"><br><br>
+
+        <label for="cua">Costo unitario del artículo (Bs.):</label><br>
+        <input type="number" id="cua" min="0" step="0.01" value="50"><br><br>
+
+        <label for="cf">Costo fijo (Bs.):</label><br>
+        <input type="number" id="cf" min="0" step="0.01" value="300"><br><br>
+
+        <label for="pvu">Precio de venta por unidad (Bs.):</label><br>
+        <input type="number" id="pvu" min="0" step="0.01" value="75"><br><br>
+
+        <button onclick="simular()">Iniciar Simulación</button>
+    </div>
+    <div class="results" id="resultadosFinales"></div>
+    <table id="tablaResultados">
+        <thead>
+            <tr>
+                <th>Día</th>
+                <th>rllecli</th>
+                <th>Clientes</th>
+                <th>Cliente #</th>
+                <th>rartcc</th>
+                <th>Artículos Comprados</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>

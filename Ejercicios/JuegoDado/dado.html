@@ -1,0 +1,36 @@
+
+    
+
+<link rel="stylesheet" href="./dado.css">
+    <h1>Simulación de Juegos de Dados</h1>
+
+    <div class="container">
+        <label for="nmj">Número máximo de juegos:</label><br>
+        <input type="number" id="nmj" min="1" value="10"><br><br>
+
+        <label for="puj">Costo de cada juego (Bs.):</label><br>
+        <input type="number" id="puj" min="0" step="0.01" value="2"><br><br>
+
+        <label for="cus7">Premio al jugador si suma 7 (Bs.):</label><br>
+        <input type="number" id="cus7" min="0" step="0.01" value="5"><br><br>
+
+        <button onclick="simular()">Iniciar Simulación</button>
+    </div>
+  <div class="results" id="resultadosFinales"></div>
+    <table id="tablaResultados">
+        <thead>
+            <tr>
+                <th># Juego</th>
+                <th>rdado1</th>
+                <th>rdado2</th>
+                <th>Dado 1</th>
+                <th>Dado 2</th>
+                <th>Suma</th>
+                <th>GNC (Ganancia Neta Casa)</th>
+                <th>NJGC (Juegos Ganados Casa)</th>
+            </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+

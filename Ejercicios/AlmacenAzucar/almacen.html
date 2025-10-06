@@ -1,0 +1,16 @@
+<link rel="stylesheet" href="./almacen.css">
+<div class="container">
+  <h1>Simulación Inventario de Azúcar</h1>
+  <label>Días de simulación: <input type="number" id="NMD" value="60"></label>
+  <label>Capacidad bodega (kg): <input type="number" id="CBOD" value="700"></label>
+  <label>Costo por orden (BS): <input type="number" id="CORD" value="100"></label>
+  <label>Precio venta unitario (BS/kg): <input type="number" id="PVU" value="5"></label>
+  <label>Costo unitario inventario (BS/kg): <input type="number" id="CUI" value="0.1" step="0.01"></label>
+  <label>Costo unitario adquisición (BS/kg): <input type="number" id="CUA" value="3.5" step="0.01"></label>
+  <label>Inventario inicial (kg): <input type="number" id="IAZU" value="500"></label>
+  <button onclick="simular()">Simular</button>
+
+  
+</div>
+<div id="resultado" class="result"></div>
+  <div id="tabla"></div>

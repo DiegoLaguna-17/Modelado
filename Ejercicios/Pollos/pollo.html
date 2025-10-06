@@ -1,0 +1,33 @@
+
+
+  <h1>Simulación de Producción del Granero</h1>
+
+  <div class="container">
+    <label for="nmd">Número de días de simulación:</label><br>
+    <input type="number" id="nmd" min="1" value="30"><br><br>
+
+    <label for="pvuh">Precio de venta por huevo (Bs.):</label><br>
+    <input type="number" id="pvuh" min="0" step="0.01" value="1.5"><br><br>
+
+    <label for="pvup">Precio de venta por pollo (Bs.):</label><br>
+    <input type="number" id="pvup" min="0" step="0.01" value="5"><br><br>
+
+    <button onclick="simular()">Iniciar Simulación</button>
+  </div>
+<div class="results" id="resultadosFinales"></div>
+  <table id="tablaResultados">
+    <thead>
+      <tr>
+        <th>Día</th>
+        <th>rhpg</th>
+        <th>Huevos puestos (HPG)</th>
+        <th>rEH</th>
+        <th>rEP</th>
+        <th>Resultado</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+
+  
+
